@@ -5192,6 +5192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
         type: 3}
+      propertyPath: phasesList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
       propertyPath: burgerSpawnPoint
       value: 
       objectReference: {fileID: 1281369202}
@@ -5308,7 +5313,142 @@ PrefabInstance:
     - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
         type: 3}
       propertyPath: chanceToSpawnGoodBuger
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: accelerationSetups.Array.data[0].spawTimeInterval.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: accelerationSetups.Array.data[0].spawTimeInterval.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[0].phaseName
+      value: Phase 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[0].burgerToSpeedUp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[0].newSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[0].spawTimeInterval.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[0].spawTimeInterval.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[1].phaseName
+      value: Phase 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[1].burgerToSpeedUp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[1].newSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[1].spawTimeInterval.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[1].spawTimeInterval.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[2].phaseName
+      value: Phase 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[2].burgerToSpeedUp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[2].newSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[2].spawTimeInterval.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[2].spawTimeInterval.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[3].phaseName
+      value: Phase 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[3].burgerToSpeedUp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[3].newSpeed
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[3].spawTimeInterval.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[3].spawTimeInterval.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[4].phaseName
+      value: Phase 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[4].burgerToSpeedUp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[4].newSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[4].spawTimeInterval.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
+        type: 3}
+      propertyPath: phasesList.Array.data[4].spawTimeInterval.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37a084e08f0afdc4e8e69234a0ad88d1, type: 3}
