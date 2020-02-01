@@ -43,11 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1066544ce43f48048b89c1db291fa12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burgerPrefabs:
-  - {fileID: 2461528104321461093, guid: 837e1cddf2279e542adebdb85aa6c7f1, type: 3}
-  - {fileID: 6505373214640966212, guid: 4b3c0a5ed7522e04fa2202072aa619bb, type: 3}
-  - {fileID: 5961435607628065105, guid: 192e365493c819f49a1d2d80a5ee79aa, type: 3}
-  - {fileID: 3976962186036177487, guid: fff0ce0ca00b33b4e88f452f2cbd9356, type: 3}
   burgerGood: {fileID: 2461528104321461093, guid: 837e1cddf2279e542adebdb85aa6c7f1,
     type: 3}
   burgerSmall: {fileID: 3976962186036177487, guid: fff0ce0ca00b33b4e88f452f2cbd9356,
@@ -58,6 +53,9 @@ MonoBehaviour:
     type: 3}
   burgerDivide: {fileID: 2852813282167692706, guid: 6c575275a2f7e1f40b214a79a948575b,
     type: 3}
+  chanceToSpawnGoodBuger: 10
   burgerSpawnPoint: {fileID: 0}
+  currentSpeed: 3
   timeToSpawnABurger: 3
+  life: 5
   currentScore: 0
