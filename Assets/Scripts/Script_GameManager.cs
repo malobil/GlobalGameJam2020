@@ -12,6 +12,7 @@ public class Script_GameManager : MonoBehaviour
     public GameObject burgerHight;
     public GameObject burgerLong;
     public GameObject burgerDivide;
+    private List<GameObject> burgerSpawned = new List<GameObject>();
 
     [Range(0,100)]
     public float chanceToSpawnGoodBuger = 10f;
@@ -24,6 +25,11 @@ public class Script_GameManager : MonoBehaviour
     public int life = 5;
     private int currentLife;
     public int currentScore = 0;
+
+    public List<Acceleration> accelerationSetups;
+    private float currentTimeToSpeedUp;
+    private bool allowToSpeedUp = false ;
+    private int currentAccelerationIdx = 0;
 
     private void Awake()
     {
@@ -41,11 +47,17 @@ public class Script_GameManager : MonoBehaviour
     void Start()
     {
         currentLife = life;
+        currentTimeToSpeedUp = accelerationSetups[currentAccelerationIdx].newSpeed;
         Script_UIManager.Instance.UpdateScore(currentScore);
         Script_UIManager.Instance.UpdateLife(currentLife);
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
      
+    }
+
+    private void Update()
+    {
+        SpeedUpCountDown();
     }
 
     public void SpawnARandomBurger()
@@ -97,18 +109,61 @@ public class Script_GameManager : MonoBehaviour
                 break;
         }
 
-        newBurger.GetComponent<Script_Burger>().SetSpeed(currentSpeed);
+        AddBurgerToList(newBurger);
+        newBurger.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
     }
 
-    public void SpeedUp()
+    public void AddBurgerToList(GameObject burgerToAdd)
     {
+        burgerSpawned.Add(burgerToAdd);
+    }
 
+    public void RemoveBurgerFromList(GameObject burgerToRemove)
+    {
+        burgerSpawned.Remove(burgerToRemove);
+    }
+
+    public void SetNewSpeed(float newSpeed)
+    {
+        currentSpeed = newSpeed;
+
+        foreach (GameObject burgers in burgerSpawned)
+        {
+            burgers.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
+        }
+
+        Debug.Log("speed up");
+    }
+
+    public void SetNewSpawnTime(float newSpawnRate)
+    {
+        timeToSpawnABurger = newSpawnRate;
+    }
+
+    void SpeedUp()
+    {
+        currentAccelerationIdx++;
+
+        if(currentAccelerationIdx < accelerationSetups.Count)
+        {
+            SetNewSpeed(accelerationSetups[currentAccelerationIdx].newSpeed);
+            SetNewSpawnTime(accelerationSetups[currentAccelerationIdx].newSpawnTime);
+            currentTimeToSpeedUp = accelerationSetups[currentAccelerationIdx].timeToSpeedUp;
+            allowToSpeedUp = false;
+        }
+       
     }
 
     IEnumerator WaitSpawn()
     {
         yield return new WaitForSeconds(timeToSpawnABurger);
         SpawnARandomBurger();
+
+        if (allowToSpeedUp)
+        {
+            SpeedUp();
+        }
+
         StartCoroutine(WaitSpawn());
     }
 
@@ -142,4 +197,25 @@ public class Script_GameManager : MonoBehaviour
         StopAllCoroutines();
         Time.timeScale = 0;
     }
+
+    void SpeedUpCountDown()
+    {
+        if(currentTimeToSpeedUp > 0)
+        {
+            currentTimeToSpeedUp -= Time.deltaTime;
+        }
+        else
+        {
+            allowToSpeedUp = true;
+        }
+    }
+}
+
+[System.Serializable]
+public class Acceleration
+{
+    public string phaseName = "Phase 0";
+    public float timeToSpeedUp;
+    public float newSpeed;
+    public float newSpawnTime;
 }

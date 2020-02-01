@@ -91,6 +91,8 @@ public class Script_Player : MonoBehaviour
             Script_GameManager.Instance.SpawnSpecificBurger(BurgerType.good, new Vector3(
                 currentTargetBurger.transform.position.x - 0.35f, currentTargetBurger.transform.position.y, currentTargetBurger.transform.position.z));
         }
+
+        Script_GameManager.Instance.RemoveBurgerFromList(currentTargetBurger);
         Destroy(currentTargetBurger.transform.root.gameObject);
     }
 

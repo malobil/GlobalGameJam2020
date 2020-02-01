@@ -6,25 +6,18 @@ public enum BurgerType { good, small, hight, longer, divide}
 public class Script_Burger : MonoBehaviour
 {
     public BurgerType type;
-    public float moveSpeed;
     public int scoreValue = 15 ;
 
     private Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Move(Vector3.left,moveSpeed);
     }
 
-    void Move(Vector3 _direction,float _moveSpeed)
+    public void Move(Vector3 _direction,float _moveSpeed)
     {
         rb.velocity = _direction * _moveSpeed;
-    }
-
-    public void SetSpeed(float newSpeed)
-    {
-        moveSpeed = newSpeed;
     }
 }
