@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  moveSpeed: 2
+  moveSpeed: 8
+  scoreValue: 1
 --- !u!1 &6299042945721620516
 GameObject:
   m_ObjectHideFlags: 0

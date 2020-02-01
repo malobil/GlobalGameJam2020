@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3098361662626090170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3098361662626090148}
+  - component: {fileID: 3098361662626090171}
+  m_Layer: 0
+  m_Name: Prefab_GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3098361662626090148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098361662626090170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3098361662626090171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098361662626090170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1066544ce43f48048b89c1db291fa12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burgerPrefabs:
+  - {fileID: 2461528104321461093, guid: 837e1cddf2279e542adebdb85aa6c7f1, type: 3}
+  - {fileID: 6505373214640966212, guid: 4b3c0a5ed7522e04fa2202072aa619bb, type: 3}
+  - {fileID: 5961435607628065105, guid: 192e365493c819f49a1d2d80a5ee79aa, type: 3}
+  - {fileID: 3976962186036177487, guid: fff0ce0ca00b33b4e88f452f2cbd9356, type: 3}
+  burgerGood: {fileID: 2461528104321461093, guid: 837e1cddf2279e542adebdb85aa6c7f1,
+    type: 3}
+  burgerSmall: {fileID: 3976962186036177487, guid: fff0ce0ca00b33b4e88f452f2cbd9356,
+    type: 3}
+  burgerHight: {fileID: 6505373214640966212, guid: 4b3c0a5ed7522e04fa2202072aa619bb,
+    type: 3}
+  burgerLong: {fileID: 5961435607628065105, guid: 192e365493c819f49a1d2d80a5ee79aa,
+    type: 3}
+  burgerDivide: {fileID: 2852813282167692706, guid: 6c575275a2f7e1f40b214a79a948575b,
+    type: 3}
+  burgerSpawnPoint: {fileID: 0}
+  timeToSpawnABurger: 3
+  currentScore: 0

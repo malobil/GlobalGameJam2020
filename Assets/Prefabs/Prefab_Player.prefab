@@ -611,10 +611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c195ea055a107424baff48b44dde22b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spatule: {fileID: 0}
+  spatule: {fileID: 1847445434}
   knife: {fileID: 6519649087802713594}
-  sucker: {fileID: 0}
-  tongs: {fileID: 0}
+  sucker: {fileID: 704360685}
+  tongs: {fileID: 842819224}
 --- !u!95 &170768519783111589
 Animator:
   serializedVersion: 3

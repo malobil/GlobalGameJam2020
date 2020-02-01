@@ -8,13 +8,15 @@ public enum ToolType { Spatule, Knife, Sucker, Tongs}
 public class Script_Player : MonoBehaviour
 {
     public GameObject spatule, knife, sucker, tongs;
-    private bool canUseTool = false;
+    private Animator animatorComp;
+    private bool canUseTool = true;
     private InGameInputs inputs;
     private GameObject currentTargetBurger ;
 
     private void Awake()
     {
         inputs = new InGameInputs();
+        animatorComp = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -81,19 +83,23 @@ public class Script_Player : MonoBehaviour
     void CorrectTool()
     {
         Script_GameManager.Instance.AddScore(currentTargetBurger.GetComponentInParent<Script_Burger>().scoreValue);
+        Script_GameManager.Instance.SpawnSpecificBurger(BurgerType.good, currentTargetBurger.transform.position);
         Destroy(currentTargetBurger.transform.root.gameObject);
-        Debug.Log("Correct");
-        canUseTool = false;
     }
 
     void BadTool()
     {
-        canUseTool = false;
+
     }
 
-    void ToolAnimation()
+    public void AllowToolUse()
     {
+        canUseTool = true;
+    }
 
+    public void ForbidToolUse()
+    {
+        canUseTool = false;
     }
 
     public void UseSpatule(InputAction.CallbackContext context)
@@ -101,6 +107,8 @@ public class Script_Player : MonoBehaviour
         if(canUseTool)
         {
             CheckUsedTool(ToolType.Spatule);
+            animatorComp.SetTrigger("UseSpatule");
+            ForbidToolUse();
             Debug.Log("Spatule");
         }
     }
@@ -110,6 +118,8 @@ public class Script_Player : MonoBehaviour
         if (canUseTool)
         {
             CheckUsedTool(ToolType.Knife);
+            animatorComp.SetTrigger("UseKnife");
+            ForbidToolUse();
             Debug.Log("Knife");
         }
     }
@@ -119,6 +129,8 @@ public class Script_Player : MonoBehaviour
         if (canUseTool)
         {
             CheckUsedTool(ToolType.Tongs);
+            animatorComp.SetTrigger("UseTongs");
+            ForbidToolUse();
             Debug.Log("Tongs");
         }
     }
@@ -128,6 +140,8 @@ public class Script_Player : MonoBehaviour
         if (canUseTool)
         {
             CheckUsedTool(ToolType.Sucker);
+            animatorComp.SetTrigger("UseSucker");
+            ForbidToolUse();
             Debug.Log("Sucker");
         }
     }
@@ -175,7 +189,6 @@ public class Script_Player : MonoBehaviour
         if(other.GetComponentInParent<Script_Burger>())
         {
             currentTargetBurger = other.transform.parent.gameObject;
-            canUseTool = true;
         }
     }
 
@@ -184,7 +197,6 @@ public class Script_Player : MonoBehaviour
         if (other.GetComponentInParent<Script_Burger>())
         {
             currentTargetBurger = null;
-            canUseTool = false;
         }
     }
 }
