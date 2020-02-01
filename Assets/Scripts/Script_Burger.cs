@@ -7,6 +7,7 @@ public class Script_Burger : MonoBehaviour
 {
     public BurgerType type;
     public int scoreValue = 15 ;
+    public GameObject associateInputUI;
 
     private Rigidbody rb;
 

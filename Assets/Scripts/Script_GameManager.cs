@@ -111,6 +111,7 @@ public class Script_GameManager : MonoBehaviour
 
         AddBurgerToList(newBurger);
         newBurger.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
+        Script_UIManager.Instance.SpawnInputIndication(burgerToSpawn);
     }
 
     public void AddBurgerToList(GameObject burgerToAdd)

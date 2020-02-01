@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1531451785877318880, guid: 837e1cddf2279e542adebdb85aa6c7f1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2461528104321461093, guid: 837e1cddf2279e542adebdb85aa6c7f1,
         type: 3}
       propertyPath: m_Name
-      value: Prefab_BurgerTooSmall Variant
+      value: Prefab_BurgerTooSmall
       objectReference: {fileID: 0}
     - target: {fileID: 3882439041945259813, guid: 837e1cddf2279e542adebdb85aa6c7f1,
         type: 3}
