@@ -722,15 +722,20 @@ MonoBehaviour:
   scoreText: {fileID: 6617680809431875369}
   lifeText: {fileID: 361639257}
   gameOverUI: {fileID: 1344239281}
-  inputIndicationPrefab: {fileID: 0}
-  inputIndicationHolder: {fileID: 0}
+  inputIndicationPrefab: {fileID: 7134612673437223832, guid: 478054ce51a957d4ea5386a6d510d438,
+    type: 3}
+  inputIndicationHolder: {fileID: 770750465}
   inputUIList:
   - controllerName: Keyboard
-    spatuleInputSpr: {fileID: 0}
-    tongsInputSpr: {fileID: 0}
-    knifeInputSpr: {fileID: 0}
-    suckerInputSpr: {fileID: 0}
-    nothingInputSpr: {fileID: 0}
+    spatuleInputSpr: {fileID: -4397129911206595011, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    tongsInputSpr: {fileID: -2536684746343878895, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    knifeInputSpr: {fileID: -682870216569393785, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    suckerInputSpr: {fileID: -4705523147275019333, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    nothingInputSpr: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &6617680809403171598
 GameObject:
   m_ObjectHideFlags: 0

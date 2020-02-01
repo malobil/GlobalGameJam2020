@@ -93,7 +93,7 @@ public class Script_Player : MonoBehaviour
         }
 
         Script_GameManager.Instance.RemoveBurgerFromList(currentTargetBurger);
-        Destroy(currentTargetBurger.transform.root.gameObject);
+        currentTargetBurger.GetComponent<Script_Burger>().DestroyMe();
     }
 
     void BadTool()

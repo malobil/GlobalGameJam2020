@@ -12,6 +12,6 @@ public class Script_BurgerDeadZone : MonoBehaviour
         }
 
         Script_GameManager.Instance.RemoveBurgerFromList(other.gameObject);
-        Destroy(other.gameObject);
+        other.gameObject.GetComponentInParent<Script_Burger>().DestroyMe();
     }
 }

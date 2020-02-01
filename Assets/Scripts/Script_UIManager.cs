@@ -43,7 +43,7 @@ public class Script_UIManager : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-    public void SpawnInputIndication(BurgerType bType)
+    public GameObject SpawnInputIndication(BurgerType bType)
     {
         int inputsUIIdx = 0;
         GameObject uiSpawned = Instantiate(inputIndicationPrefab, inputIndicationHolder);
@@ -67,11 +67,14 @@ public class Script_UIManager : MonoBehaviour
                 spawnedImg.sprite = inputUIList[inputsUIIdx].suckerInputSpr;
                 break;
         }
+
+        return uiSpawned;
     }
 
     public void UpdateInputIndicationPosition(GameObject inputIndication, float positionPercent)
     {
-
+        float newPosition = Screen.width * (positionPercent/100) ;
+        inputIndication.GetComponent<RectTransform>().position = new Vector2(newPosition, inputIndication.GetComponent<RectTransform>().position.y);
     }
 }
 

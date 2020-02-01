@@ -18,6 +18,7 @@ public class Script_GameManager : MonoBehaviour
     public float chanceToSpawnGoodBuger = 10f;
 
     public Transform burgerSpawnPoint;
+    public Transform burgerEndPoint;
 
     public float currentSpeed = 3f;
     public float timeToSpawnABurger = 3f;
@@ -111,7 +112,7 @@ public class Script_GameManager : MonoBehaviour
 
         AddBurgerToList(newBurger);
         newBurger.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
-        Script_UIManager.Instance.SpawnInputIndication(burgerToSpawn);
+        newBurger.GetComponent<Script_Burger>().associateInputUI = Script_UIManager.Instance.SpawnInputIndication(burgerToSpawn);
     }
 
     public void AddBurgerToList(GameObject burgerToAdd)
@@ -132,8 +133,6 @@ public class Script_GameManager : MonoBehaviour
         {
             burgers.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
         }
-
-        Debug.Log("speed up");
     }
 
     public void SetNewSpawnTime(float newSpawnRate)
@@ -209,6 +208,13 @@ public class Script_GameManager : MonoBehaviour
         {
             allowToSpeedUp = true;
         }
+    }
+
+    public float GetPercentDistance(Vector3 actualPos)
+    {
+        float distanceFromStart =
+            (Vector3.Distance(burgerSpawnPoint.position, actualPos) / Vector3.Distance(burgerSpawnPoint.position, burgerEndPoint.position))*100f;
+        return distanceFromStart;
     }
 }
 
