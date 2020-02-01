@@ -12,6 +12,8 @@ public class Script_GameManager : MonoBehaviour
 
     public float timeToSpawnABurger = 3f;
 
+    public int currentScore = 0;
+
     private void Awake()
     {
         if(Instance == null)
@@ -31,12 +33,6 @@ public class Script_GameManager : MonoBehaviour
         StartCoroutine(WaitSpawn());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnABurger()
     {
         int randomBurgerIdx = Random.Range(0, burgerPrefabs.Count);
@@ -48,5 +44,10 @@ public class Script_GameManager : MonoBehaviour
         yield return new WaitForSeconds(timeToSpawnABurger);
         SpawnABurger();
         StartCoroutine(WaitSpawn());
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        currentScore += scoreToAdd;
     }
 }

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BurgerType { good, small, hight, longer}
+public enum BurgerType { good, small, hight, longer, divide}
 public class Script_Burger : MonoBehaviour
 {
     public BurgerType type;
     public float moveSpeed;
+    public int scoreValue = 15 ;
 
     private Rigidbody rb;
 
@@ -15,12 +16,6 @@ public class Script_Burger : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Move(Vector3.right,moveSpeed);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void Move(Vector3 _direction,float _moveSpeed)
