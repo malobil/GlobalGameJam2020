@@ -125,7 +125,6 @@ public class Script_Player : MonoBehaviour
     {
         if (canUseTool)
         {
-            CheckUsedTool(ToolType.Knife);
             animatorComp.SetTrigger("UseKnife");
             ForbidToolUse();
         }
