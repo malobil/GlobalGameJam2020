@@ -13,11 +13,16 @@ public class Script_GameManager : MonoBehaviour
     public GameObject burgerLong;
     public GameObject burgerDivide;
 
+    [Range(0,100)]
+    public float chanceToSpawnGoodBuger = 10f;
+
     public Transform burgerSpawnPoint;
 
     public float currentSpeed = 3f;
     public float timeToSpawnABurger = 3f;
 
+    public int life = 5;
+    private int currentLife;
     public int currentScore = 0;
 
     private void Awake()
@@ -35,34 +40,37 @@ public class Script_GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentLife = life;
         Script_UIManager.Instance.UpdateScore(currentScore);
+        Script_UIManager.Instance.UpdateLife(currentLife);
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
+     
     }
 
     public void SpawnARandomBurger()
     {
-        int randomBurgerIdx = Random.Range(0, 5);
-        BurgerType burgerToSpawn = BurgerType.good ; 
-
-        switch(randomBurgerIdx)
+        BurgerType burgerToSpawn = BurgerType.good;
+        if (Random.Range(0,101) > chanceToSpawnGoodBuger)
         {
-            case 0:
-                burgerToSpawn = BurgerType.good;
-                break;
-            case 1:
-                burgerToSpawn = BurgerType.hight;
-                break;
-            case 2:
-                burgerToSpawn = BurgerType.longer;
-                break;
-            case 3:
-                burgerToSpawn = BurgerType.small;
-                break;
-            case 4:
-                burgerToSpawn = BurgerType.divide;
-                break;
-        }
+            int randomBurgerIdx = Random.Range(0, 4);
+
+            switch (randomBurgerIdx)
+            {
+                case 0:
+                    burgerToSpawn = BurgerType.divide;
+                    break;
+                case 1:
+                    burgerToSpawn = BurgerType.hight;
+                    break;
+                case 2:
+                    burgerToSpawn = BurgerType.longer;
+                    break;
+                case 3:
+                    burgerToSpawn = BurgerType.small;
+                    break;
+            }
+        }       
 
         SpawnSpecificBurger(burgerToSpawn, burgerSpawnPoint.transform.position);
     }
@@ -89,7 +97,12 @@ public class Script_GameManager : MonoBehaviour
                 break;
         }
 
-        newBurger.GetComponent<Script_Burger>().moveSpeed = currentSpeed;
+        newBurger.GetComponent<Script_Burger>().SetSpeed(currentSpeed);
+    }
+
+    public void SpeedUp()
+    {
+
     }
 
     IEnumerator WaitSpawn()
@@ -101,7 +114,32 @@ public class Script_GameManager : MonoBehaviour
 
     public void AddScore(int scoreToAdd)
     {
-        currentScore += scoreToAdd;
+        if(scoreToAdd + currentScore > 0)
+        {
+            currentScore += scoreToAdd;
+           
+        }
+        else
+        {
+            currentScore = 0;
+        }
         Script_UIManager.Instance.UpdateScore(currentScore);
+    }
+
+    public void SubstractLife(int lifeLost)
+    {
+        currentLife-= lifeLost;
+        Script_UIManager.Instance.UpdateLife(currentLife);
+        if(currentLife <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        Script_UIManager.Instance.ShowGameOver();
+        StopAllCoroutines();
+        Time.timeScale = 0;
     }
 }

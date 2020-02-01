@@ -13,6 +13,7 @@ public class Script_Player : MonoBehaviour
     private InGameInputs inputs;
     private GameObject currentTargetBurger ;
 
+
     private void Awake()
     {
         inputs = new InGameInputs();
@@ -84,6 +85,12 @@ public class Script_Player : MonoBehaviour
     {
         Script_GameManager.Instance.AddScore(currentTargetBurger.GetComponentInParent<Script_Burger>().scoreValue);
         Script_GameManager.Instance.SpawnSpecificBurger(BurgerType.good, currentTargetBurger.transform.position);
+
+        if(currentTargetBurger.GetComponent<Script_Burger>().type == BurgerType.longer)
+        {
+            Script_GameManager.Instance.SpawnSpecificBurger(BurgerType.good, new Vector3(
+                currentTargetBurger.transform.position.x - 1.2f, currentTargetBurger.transform.position.y, currentTargetBurger.transform.position.z));
+        }
         Destroy(currentTargetBurger.transform.root.gameObject);
     }
 
@@ -109,7 +116,6 @@ public class Script_Player : MonoBehaviour
             CheckUsedTool(ToolType.Spatule);
             animatorComp.SetTrigger("UseSpatule");
             ForbidToolUse();
-            Debug.Log("Spatule");
         }
     }
 
@@ -120,7 +126,6 @@ public class Script_Player : MonoBehaviour
             CheckUsedTool(ToolType.Knife);
             animatorComp.SetTrigger("UseKnife");
             ForbidToolUse();
-            Debug.Log("Knife");
         }
     }
 
@@ -131,7 +136,6 @@ public class Script_Player : MonoBehaviour
             CheckUsedTool(ToolType.Tongs);
             animatorComp.SetTrigger("UseTongs");
             ForbidToolUse();
-            Debug.Log("Tongs");
         }
     }
 
@@ -142,7 +146,6 @@ public class Script_Player : MonoBehaviour
             CheckUsedTool(ToolType.Sucker);
             animatorComp.SetTrigger("UseSucker");
             ForbidToolUse();
-            Debug.Log("Sucker");
         }
     }
 
@@ -188,7 +191,7 @@ public class Script_Player : MonoBehaviour
     {
         if(other.GetComponentInParent<Script_Burger>())
         {
-            currentTargetBurger = other.transform.parent.gameObject;
+            currentTargetBurger = other.transform.root.gameObject;
         }
     }
 

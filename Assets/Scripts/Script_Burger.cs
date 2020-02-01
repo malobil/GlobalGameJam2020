@@ -22,4 +22,9 @@ public class Script_Burger : MonoBehaviour
     {
         rb.velocity = _direction * _moveSpeed;
     }
+
+    public void SetSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 }

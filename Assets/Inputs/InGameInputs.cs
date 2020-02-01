@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/InGameInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/InGameInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -121,7 +121,7 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""92638b87-d737-40ac-816e-cdfdb1a329b7"",
-                    ""path"": ""<Keyboard>/u"",
+                    ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,7 +154,7 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e6680280-cdd5-4ae0-aef3-5d10d5737aad"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
