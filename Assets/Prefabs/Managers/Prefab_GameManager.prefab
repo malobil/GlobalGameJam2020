@@ -53,9 +53,32 @@ MonoBehaviour:
     type: 3}
   burgerDivide: {fileID: 2852813282167692706, guid: 6c575275a2f7e1f40b214a79a948575b,
     type: 3}
-  chanceToSpawnGoodBuger: 10
+  chanceToSpawnGoodBuger: 1
   burgerSpawnPoint: {fileID: 0}
-  currentSpeed: 3
+  burgerEndPoint: {fileID: 0}
+  currentSpeed: 1
   timeToSpawnABurger: 3
   life: 5
   currentScore: 0
+  phasesList:
+  - phaseName: Phase 0
+    burgerToSpeedUp: 10
+    newSpeed: 1
+    spawTimeInterval: {x: 1.8, y: 2.5}
+  - phaseName: Phase 1
+    burgerToSpeedUp: 10
+    newSpeed: 1.5
+    spawTimeInterval: {x: 1.3, y: 2}
+  - phaseName: Phase 2
+    burgerToSpeedUp: 20
+    newSpeed: 1.5
+    spawTimeInterval: {x: 0.5, y: 1.5}
+  - phaseName: Phase 3
+    burgerToSpeedUp: 20
+    newSpeed: 1.8
+    spawTimeInterval: {x: 0.5, y: 1}
+  - phaseName: Phase 4
+    burgerToSpeedUp: 15
+    newSpeed: 2
+    spawTimeInterval: {x: 0.3, y: 1}
+  tapisRenderer: {fileID: 0}

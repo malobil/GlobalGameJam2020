@@ -31,6 +31,8 @@ public class Script_GameManager : MonoBehaviour
     private int currentPhase = 0;
     private int burgerSpawnedThisPhase = 0;
 
+    public Renderer tapisRenderer;
+
     private void Awake()
     {
         if(Instance == null)
@@ -51,6 +53,17 @@ public class Script_GameManager : MonoBehaviour
         Script_UIManager.Instance.UpdateLife(currentLife);
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
+    }
+
+    private void Update()
+    {
+        TapisAnimation();
+    }
+
+    void TapisAnimation()
+    {
+        float xOffset = -currentSpeed * Time.time;
+        tapisRenderer.material.mainTextureOffset = new Vector2(xOffset, 0);
     }
 
     public void SpawnARandomBurger()

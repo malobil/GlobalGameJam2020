@@ -3099,7 +3099,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: eb34edc7f8d78d442afe816489ff276e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb34edc7f8d78d442afe816489ff276e,
         type: 3}
@@ -3988,7 +3988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146555108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.549, y: 1.231, z: -2.414}
+  m_LocalPosition: {x: -2.549, y: 1.11, z: -2.414}
   m_LocalScale: {x: 0.4498, y: 0.4498, z: 0.4498}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4171,7 +4171,7 @@ PrefabInstance:
     - target: {fileID: 6519649088677023624, guid: 51a9d9e19178b814aa2d46d55f401d42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.983
+      value: 0.884
       objectReference: {fileID: 0}
     - target: {fileID: 6519649088677023624, guid: 51a9d9e19178b814aa2d46d55f401d42,
         type: 3}
@@ -4619,11 +4619,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281369201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.593, y: 1.231, z: -2.414}
+  m_LocalPosition: {x: 2.593, y: 1.11, z: -2.414}
   m_LocalScale: {x: 0.4498, y: 0.4498, z: 0.4498}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1283412034
 PrefabInstance:
@@ -5050,7 +5050,7 @@ PrefabInstance:
     - target: {fileID: 6617680808424819676, guid: 7377bdb06a5cd174a95ce71be48fae79,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6617680808424819676, guid: 7377bdb06a5cd174a95ce71be48fae79,
         type: 3}
@@ -5193,6 +5193,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 28f2456a11ca45f45aa5e7678162bc4b,
     type: 3}
   m_PrefabInstance: {fileID: 1491584406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1553951845 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1795998013772531723, guid: eb34edc7f8d78d442afe816489ff276e,
+    type: 3}
+  m_PrefabInstance: {fileID: 831218570}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1630042599
 PrefabInstance:
@@ -5338,124 +5344,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
         type: 3}
-      propertyPath: accelerationSetups.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
       propertyPath: burgerSpawnPoint
       value: 
       objectReference: {fileID: 1281369202}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: currentSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].phaseName
-      value: Phase 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[1].phaseName
-      value: Phase 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].timeToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].newSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[1].timeToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[1].newSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].newSpawnTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[1].newSpawnTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[2].phaseName
-      value: Phase 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[2].timeToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[2].newSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[2].newSpawnTime
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[3].phaseName
-      value: Phase 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[3].timeToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[3].newSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[3].newSpawnTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[4].phaseName
-      value: Phase 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[4].timeToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[4].newSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[4].newSpawnTime
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
         type: 3}
       propertyPath: burgerEndPoint
@@ -5463,144 +5354,9 @@ PrefabInstance:
       objectReference: {fileID: 1146555110}
     - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
         type: 3}
-      propertyPath: chanceToSpawnGoodBuger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].spawTimeInterval.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: accelerationSetups.Array.data[0].spawTimeInterval.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[0].phaseName
-      value: Phase 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[0].burgerToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[0].newSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[0].spawTimeInterval.x
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[0].spawTimeInterval.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[1].phaseName
-      value: Phase 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[1].burgerToSpeedUp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[1].newSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[1].spawTimeInterval.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[1].spawTimeInterval.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[2].phaseName
-      value: Phase 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[2].burgerToSpeedUp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[2].newSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[2].spawTimeInterval.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[2].spawTimeInterval.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[3].phaseName
-      value: Phase 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[3].burgerToSpeedUp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[3].newSpeed
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[3].spawTimeInterval.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[3].spawTimeInterval.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[4].phaseName
-      value: Phase 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[4].burgerToSpeedUp
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[4].newSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[4].spawTimeInterval.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098361662626090171, guid: 37a084e08f0afdc4e8e69234a0ad88d1,
-        type: 3}
-      propertyPath: phasesList.Array.data[4].spawTimeInterval.y
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: tapisRenderer
+      value: 
+      objectReference: {fileID: 1553951845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37a084e08f0afdc4e8e69234a0ad88d1, type: 3}
 --- !u!1 &1695282859
