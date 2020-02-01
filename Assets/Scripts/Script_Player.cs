@@ -89,7 +89,7 @@ public class Script_Player : MonoBehaviour
         if(currentTargetBurger.GetComponent<Script_Burger>().type == BurgerType.longer)
         {
             Script_GameManager.Instance.SpawnSpecificBurger(BurgerType.good, new Vector3(
-                currentTargetBurger.transform.position.x - 1.2f, currentTargetBurger.transform.position.y, currentTargetBurger.transform.position.z));
+                currentTargetBurger.transform.position.x - 0.35f, currentTargetBurger.transform.position.y, currentTargetBurger.transform.position.z));
         }
         Destroy(currentTargetBurger.transform.root.gameObject);
     }
