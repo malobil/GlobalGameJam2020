@@ -30,6 +30,7 @@ public class Script_Burger : MonoBehaviour
     public void SetAssociateInputUI(GameObject newAssociateInputUI)
     {
         associateInputUI = newAssociateInputUI;
+        Script_UIManager.Instance.UpdateInputIndicationPosition(associateInputUI, Script_GameManager.Instance.GetPercentDistance(transform.position));
     }
 
     public void DestroyMe()
