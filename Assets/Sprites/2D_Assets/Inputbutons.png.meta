@@ -38,6 +38,57 @@ TextureImporter:
   - first:
       213: -8385270376756989214
     second: InputButton_PS_T
+  - first:
+      213: -4397129911206595011
+    second: Input_KB_Q
+  - first:
+      213: -682870216569393785
+    second: Input_KB_W
+  - first:
+      213: -2536684746343878895
+    second: Input_KB_O
+  - first:
+      213: -4705523147275019333
+    second: Input_KB_P
+  - first:
+      213: 7020222394514236587
+    second: Input_KB_Check
+  - first:
+      213: -8915050924136310964
+    second: Input_KB_A
+  - first:
+      213: 6252125103069265138
+    second: Input_KB_Z
+  - first:
+      213: 1099085308389305806
+    second: Input_XB_A
+  - first:
+      213: 1456801388537646484
+    second: Input_XB_B
+  - first:
+      213: -1659634156921940585
+    second: Input_XB_X
+  - first:
+      213: 7876141300913652239
+    second: Input_XB_Y
+  - first:
+      213: -8385270376756989214
+    second: Input_XB_Check
+  - first:
+      213: -3304156750744693488
+    second: Input_PS_Carre
+  - first:
+      213: 8837637043154861690
+    second: Input_PS_Rond
+  - first:
+      213: 6531635663590735199
+    second: Input_PS_Croix
+  - first:
+      213: -913065710004332170
+    second: Input_PS_Triangle
+  - first:
+      213: 3007898637598947188
+    second: Input_PS_Check
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,15 +185,36 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InputButton_KB_W
+      name: Input_KB_Q
       rect:
         serializedVersion: 2
-        x: 195
-        y: 325
-        width: 146
-        height: 146
+        x: 0
+        y: 292
+        width: 128
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36394b84a14af2c0800000000000000
+      internalID: -4397129911206595011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input_KB_W
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 292
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,15 +227,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_KB_O
+      name: Input_KB_O
       rect:
         serializedVersion: 2
-        x: 372
-        y: 325
-        width: 146
-        height: 146
+        x: 324
+        y: 292
+        width: 128
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,15 +248,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_KB_P
+      name: Input_KB_P
       rect:
         serializedVersion: 2
-        x: 556
-        y: 325
-        width: 146
-        height: 146
+        x: 484
+        y: 292
+        width: 129
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,15 +269,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_Xbox_A
+      name: Input_KB_Check
       rect:
         serializedVersion: 2
-        x: 0
-        y: 154
-        width: 146
-        height: 146
+        x: 656
+        y: 292
+        width: 129
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,15 +290,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_Xbox_B
+      name: Input_KB_A
       rect:
         serializedVersion: 2
-        x: 201
-        y: 154
-        width: 146
-        height: 146
+        x: 807
+        y: 292
+        width: 128
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,15 +311,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_Xbox_X
+      name: Input_KB_Z
       rect:
         serializedVersion: 2
-        x: 372
-        y: 154
-        width: 146
-        height: 146
+        x: 977
+        y: 292
+        width: 128
+        height: 127
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,15 +332,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_Xbox_Y
+      name: Input_XB_A
       rect:
         serializedVersion: 2
-        x: 567
-        y: 154
-        width: 146
-        height: 146
+        x: 0
+        y: 143
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,15 +353,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_PS_C
+      name: Input_XB_B
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 146
-        height: 146
+        x: 175
+        y: 143
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,15 +374,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_PS_R
+      name: Input_XB_X
       rect:
         serializedVersion: 2
-        x: 195
-        y: 1
-        width: 146
-        height: 146
+        x: 324
+        y: 143
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,15 +395,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_PS_X
+      name: Input_XB_Y
       rect:
         serializedVersion: 2
-        x: 373
-        y: 0
-        width: 146
-        height: 146
+        x: 494
+        y: 143
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,15 +416,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_PS_T
+      name: Input_XB_Check
       rect:
         serializedVersion: 2
-        x: 567
-        y: 0
-        width: 146
-        height: 146
+        x: 659
+        y: 143
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,13 +437,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InputButton_KB_Q
+      name: Input_PS_Carre
       rect:
         serializedVersion: 2
         x: 0
-        y: 325
-        width: 146
-        height: 146
+        y: 9
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,8 +451,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d36394b84a14af2c0800000000000000
-      internalID: -4397129911206595011
+      spriteID: 01557adf0f64522d0800000000000000
+      internalID: -3304156750744693488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input_PS_Rond
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 9
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e3413211895aa70800000000000000
+      internalID: 8837637043154861690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input_PS_Croix
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 9
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d399aa70805aa50800000000000000
+      internalID: 6531635663590735199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input_PS_Triangle
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 9
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6791a9a03932453f0800000000000000
+      internalID: -913065710004332170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Input_PS_Check
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 10
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4777776dfd33eb920800000000000000
+      internalID: 3007898637598947188
       vertices: []
       indices: 
       edges: []
