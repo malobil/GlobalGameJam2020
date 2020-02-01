@@ -15,7 +15,7 @@ public class Script_Burger : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Move(Vector3.right,moveSpeed);
+        Move(Vector3.left,moveSpeed);
     }
 
     void Move(Vector3 _direction,float _moveSpeed)
