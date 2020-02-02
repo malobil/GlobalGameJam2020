@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Script_UIManager : MonoBehaviour
 {
@@ -46,6 +47,23 @@ public class Script_UIManager : MonoBehaviour
     public GameObject SpawnInputIndication(BurgerType bType)
     {
         int inputsUIIdx = 0;
+
+        if(Gamepad.current != null)
+        {
+            if(Gamepad.current.displayName == "Xbox Controller")
+            {
+                inputsUIIdx = 1;
+                
+            }
+            else if(Gamepad.current.displayName == "Wireless Controller")
+            {
+                inputsUIIdx = 2;
+            }
+
+            Debug.Log(Gamepad.current.displayName);
+        }
+       
+
         GameObject uiSpawned = Instantiate(inputIndicationPrefab, inputIndicationHolder);
         Image spawnedImg = uiSpawned.GetComponent<Image>();
         
