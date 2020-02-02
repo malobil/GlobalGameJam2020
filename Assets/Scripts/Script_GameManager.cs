@@ -58,7 +58,6 @@ public class Script_GameManager : MonoBehaviour
     {
         currentLife = life;
         Script_UIManager.Instance.UpdateScore(currentScore);
-        Script_UIManager.Instance.UpdateLife(currentLife);
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
         StartCoroutine(WaitPNJSpawn());
@@ -245,7 +244,7 @@ public class Script_GameManager : MonoBehaviour
     public void SubstractLife(int lifeLost)
     {
         currentLife-= lifeLost;
-        Script_UIManager.Instance.UpdateLife(currentLife);
+        Script_UIManager.Instance.DamageUI();
         if(currentLife <= 0)
         {
             GameOver();

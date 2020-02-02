@@ -9,7 +9,8 @@ public class Script_UIManager : MonoBehaviour
 {
     public static Script_UIManager Instance { get; private set; }
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI lifeText;
+    public List<Image> lifeIcons ;
+    private int currentLifeIdx = 0;
     public GameObject gameOverUI;
 
     public GameObject inputIndicationPrefab;
@@ -34,9 +35,11 @@ public class Script_UIManager : MonoBehaviour
         scoreText.text = newScore.ToString("");
     }
 
-    public void UpdateLife(int newLife)
+    public void DamageUI()
     {
-        lifeText.text = "Life : " + newLife.ToString("");
+        lifeIcons[currentLifeIdx].color 
+            = new Color(lifeIcons[currentLifeIdx].color.r, lifeIcons[currentLifeIdx].color.g, lifeIcons[currentLifeIdx].color.b, 1f);
+        currentLifeIdx++;
     }
 
     public void ShowGameOver()
