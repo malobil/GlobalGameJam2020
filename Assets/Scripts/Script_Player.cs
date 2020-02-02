@@ -115,7 +115,6 @@ public class Script_Player : MonoBehaviour
     {
         if(canUseTool)
         {
-            CheckUsedTool(ToolType.Spatule);
             animatorComp.SetTrigger("UseSpatule");
             ForbidToolUse();
         }
@@ -134,7 +133,6 @@ public class Script_Player : MonoBehaviour
     {
         if (canUseTool)
         {
-            CheckUsedTool(ToolType.Tongs);
             animatorComp.SetTrigger("UseTongs");
             ForbidToolUse();
         }
