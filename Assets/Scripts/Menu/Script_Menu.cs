@@ -28,6 +28,7 @@ public class Script_Menu : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
         if(Instance == null)
         {
             Instance = this;
