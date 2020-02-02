@@ -8,4 +8,9 @@ public class Script_AnimationEvents : MonoBehaviour
     {
         target.SetActive(false);
     }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 }
