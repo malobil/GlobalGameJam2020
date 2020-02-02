@@ -45,7 +45,7 @@ public class Script_Menu : MonoBehaviour
     {
         inputs.InMenu.MousePosition.performed -= ctx => GetMousePos(inputs.InMenu.MousePosition.ReadValue<Vector2>());
         inputs.InMenu.Submit.performed -= ctx => PressButton();
-        inputs.Disable();
+      
     }
 
     private void Update()
@@ -63,6 +63,7 @@ public class Script_Menu : MonoBehaviour
 
     public void MenuGameTransition()
     {
+        inputs.Disable();
         inGameCamera.SetActive(true);
         menuCamera.gameObject.SetActive(false);
     }
@@ -93,13 +94,12 @@ public class Script_Menu : MonoBehaviour
     public IEnumerator WaitTransition()
     {
         yield return new WaitForSecondsRealtime(3f);
+        Time.timeScale = 1;
         GameMenuTransition();
         gameManager.SetActive(false);
         UIManager.SetActive(false);
         player.enabled = false;
         gameIsRunning = false;
-        Time.timeScale = 1;
-
     }
 
     private void GetMousePos(Vector2 mousePos)
