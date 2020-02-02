@@ -21,17 +21,22 @@ public class Script_GameManager : MonoBehaviour
     public Transform burgerEndPoint;
 
     public float currentSpeed = 3f;
-    public float timeToSpawnABurger = 3f;
+    public float speedMult = 1.2f;
+    public float spawnMult = 1.2f;
+    public float burgerToSpeedUpMult = 1.2f;
+    public int burgerToSpawnToSpeedUp = 10;
+    public Vector2 timeToSpawnABurger = new Vector2(2,3) ;
+    private float currentTimeToSpawnBurger = 2f;
 
     public int life = 5;
     private int currentLife;
     public int currentScore = 0;
 
-    public List<Phases> phasesList;
-    private int currentPhase = 0;
     private int burgerSpawnedThisPhase = 0;
 
     public Renderer tapisRenderer;
+    public List<Sprite> pnjsSprite;
+    public GameObject pnjObject;
 
     private void Awake()
     {
@@ -53,6 +58,7 @@ public class Script_GameManager : MonoBehaviour
         Script_UIManager.Instance.UpdateLife(currentLife);
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
+        StartCoroutine(WaitPNJSpawn());
     }
 
     private void Update()
@@ -145,30 +151,57 @@ public class Script_GameManager : MonoBehaviour
 
     public void SetNewSpawnTime(float newSpawnRate)
     {
-        timeToSpawnABurger = newSpawnRate;
+        currentTimeToSpawnBurger = newSpawnRate;
+    }
+
+    public void SetNewSpawnInterval()
+    {
+        timeToSpawnABurger *= spawnMult;
     }
 
     public void NextPhase()
     {
-
-        currentPhase++;
-        SetNewSpeed(phasesList[currentPhase].newSpeed);
+        SetNewSpeed(currentSpeed *= speedMult);
+        SetNewSpawnInterval();
         burgerSpawnedThisPhase = 0;
+        burgerToSpawnToSpeedUp = Mathf.RoundToInt(burgerToSpawnToSpeedUp * burgerToSpeedUpMult);
     }
 
     IEnumerator WaitSpawn()
     {
-        yield return new WaitForSeconds(timeToSpawnABurger);
+        yield return new WaitForSeconds(currentTimeToSpawnBurger);
         SpawnARandomBurger();
         SetNewSpawnTime(
-               Random.Range(phasesList[currentPhase].spawTimeInterval.x, phasesList[currentPhase].spawTimeInterval.y));
+               Random.Range(timeToSpawnABurger.x, timeToSpawnABurger.y));
         burgerSpawnedThisPhase++;
 
-        if(burgerSpawnedThisPhase >= phasesList[currentPhase].burgerToSpeedUp && currentPhase < phasesList.Count-1)
+        if(burgerSpawnedThisPhase >= burgerToSpawnToSpeedUp)
         {
             NextPhase();
         }
+
         StartCoroutine(WaitSpawn());
+    }
+
+    IEnumerator WaitPNJSpawn()
+    {
+        yield return new WaitForSeconds(Random.Range(2f,5f));
+
+        if(Random.Range(0,2) == 0)
+        {
+            SpawnAPnj();
+        }
+     
+        StartCoroutine(WaitPNJSpawn());
+    }
+
+    void SpawnAPnj()
+    {
+        int rdmPnj = Random.Range(0, pnjsSprite.Count);
+        int rdmAnimation = Random.Range(0, 6);
+        GameObject newPnj = Instantiate(pnjObject);
+        newPnj.GetComponent<SpriteRenderer>().sprite = pnjsSprite[rdmPnj];
+        newPnj.GetComponent<Animator>().SetInteger("Anim", rdmAnimation);
     }
 
     public void AddScore(int scoreToAdd)
@@ -208,13 +241,4 @@ public class Script_GameManager : MonoBehaviour
             (Vector3.Distance(burgerSpawnPoint.position, actualPos) / Vector3.Distance(burgerSpawnPoint.position, burgerEndPoint.position))*100f;
         return distanceFromStart;
     }
-}
-
-[System.Serializable]
-public class Phases
-{
-    public string phaseName = "Phase 0";
-    public float burgerToSpeedUp;
-    public float newSpeed;
-    public Vector2 spawTimeInterval ;
 }
