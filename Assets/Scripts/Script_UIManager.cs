@@ -15,6 +15,7 @@ public class Script_UIManager : MonoBehaviour
 
     public GameObject inputIndicationPrefab;
     public Transform inputIndicationHolder;
+    public TextMeshProUGUI gameOverScore;
 
     public List<InputsUI> inputUIList;
 
@@ -44,6 +45,7 @@ public class Script_UIManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        gameOverScore.text = Script_GameManager.Instance.currentScore.ToString("");
         gameOverUI.SetActive(true);
     }
 

@@ -103,7 +103,7 @@ public class Script_Menu : MonoBehaviour
 
     public IEnumerator WaitTransition()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(5f);
         Time.timeScale = 1;
         GameMenuTransition();
         gameManager.SetActive(false);
