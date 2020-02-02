@@ -374,7 +374,7 @@ MonoBehaviour:
   bType: 1
   normalSprite: {fileID: -3243065930256096816, guid: 84073c35ef1a1fe4d91504286b8ea150,
     type: 3}
-  highlightSprite: {fileID: 2013261503205373015, guid: 84073c35ef1a1fe4d91504286b8ea150,
+  highlightSprite: {fileID: -7887183776597284541, guid: 84073c35ef1a1fe4d91504286b8ea150,
     type: 3}
   objectToShow: {fileID: 400452189711502415}
   objectToHide: {fileID: 6824760621689541760}
