@@ -19,6 +19,7 @@ public class Script_Menu : MonoBehaviour
     public Script_Player player;
     public GameObject UIManager;
     public GameObject gameManager;
+    private bool gameIsRunning = false;
 
     private void Awake()
     {
@@ -45,14 +46,26 @@ public class Script_Menu : MonoBehaviour
         inputs.Disable();
     }
 
-    public void StartGame()
+    private void Update()
+    {
+        if(Camera.main.transform.position == inGameCamera.transform.position && !gameIsRunning)
+        {
+            StartGame(); 
+        }
+    }
+
+    public void StartTransition()
+    {
+        inGameCamera.SetActive(true);
+        menuCamera.gameObject.SetActive(false);
+    }
+
+    void StartGame()
     {
         gameManager.SetActive(true);
         UIManager.SetActive(true);
-       
-        inGameCamera.SetActive(true);
         player.enabled = true;
-        menuCamera.gameObject.SetActive(false);
+        gameIsRunning = true;
     }
 
     private void GetMousePos(Vector2 mousePos)
