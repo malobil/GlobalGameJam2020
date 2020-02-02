@@ -37,6 +37,10 @@ public class Script_Menu : MonoBehaviour
 
        if(Physics.Raycast(cameraRay,out hit))
        {
+            if(hit.collider.GetComponent<Script_Button>())
+            {
+                hit.collider.GetComponent<Script_Button>().Interact();
+            }
             Debug.Log(hit.collider.gameObject);
        }
     }
