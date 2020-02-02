@@ -7061,6 +7061,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 551332520}
     m_Modifications:
+    - target: {fileID: 1461990066362827923, guid: 51a9d9e19178b814aa2d46d55f401d42,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.16246098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461990066362827923, guid: 51a9d9e19178b814aa2d46d55f401d42,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.03589674
+      objectReference: {fileID: 0}
     - target: {fileID: 6519649088119564523, guid: 51a9d9e19178b814aa2d46d55f401d42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
