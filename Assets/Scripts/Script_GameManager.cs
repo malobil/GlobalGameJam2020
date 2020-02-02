@@ -206,7 +206,7 @@ public class Script_GameManager : MonoBehaviour
 
     IEnumerator WaitSoucoupeSpawn()
     {
-        yield return new WaitForSeconds(Random.Range(3f, 10f));
+        yield return new WaitForSeconds(Random.Range(1f, 4f));
         SpawnSoucoupe();
         StartCoroutine(WaitSoucoupeSpawn());
     }
