@@ -140,6 +140,17 @@ public class Script_GameManager : MonoBehaviour
         burgerSpawned.Remove(burgerToRemove);
     }
 
+    void StopAllBurgers()
+    {
+        foreach (GameObject burgers in burgerSpawned)
+        {
+            if (burgers != null)
+            {
+                burgers.GetComponent<Script_Burger>().Move(Vector3.left, 0);
+            }
+        }
+    }
+
     public void SetNewSpeed(float newSpeed)
     {
         currentSpeed = newSpeed;
@@ -243,6 +254,7 @@ public class Script_GameManager : MonoBehaviour
 
     void GameOver()
     {
+        StopAllBurgers();
         Time.timeScale = 0;
         Script_UIManager.Instance.ShowGameOver();
         Script_Menu.Instance.EndGame();
