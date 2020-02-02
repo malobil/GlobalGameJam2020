@@ -5,7 +5,7 @@ using UnityEngine;
 public class Script_Menu : MonoBehaviour
 {
     public static Script_Menu Instance { get; private set; }
-    public Camera menuCamera;
+    public GameObject menuCamera;
     public GameObject inGameCamera;
     public Transform transitionCamera;
     public Transform cameraIngame;
@@ -59,7 +59,7 @@ public class Script_Menu : MonoBehaviour
     {
         mousePosition = mousePos;
 
-        Ray cameraRay = menuCamera.ScreenPointToRay(mousePosition);
+        Ray cameraRay = Camera.main.ScreenPointToRay(mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(cameraRay, out hit))
