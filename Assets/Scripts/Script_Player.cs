@@ -12,12 +12,13 @@ public class Script_Player : MonoBehaviour
     private bool canUseTool = true;
     private InGameInputs inputs;
     private GameObject currentTargetBurger ;
-
+    private AudioSource audioComp;
 
     private void Awake()
     {
         inputs = new InGameInputs();
         animatorComp = GetComponent<Animator>();
+        audioComp = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
