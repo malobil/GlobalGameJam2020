@@ -13,7 +13,7 @@ TextureImporter:
     second: Button_Quit
   - first:
       213: 2013261503205373015
-    second: Button_Back_HL
+    second: Button_Play_HL
   - first:
       213: 3760674464881954987
     second: Button_Tuto_HL
@@ -152,6 +152,9 @@ TextureImporter:
   - first:
       213: 2007788374825723147
     second: Buttons_49
+  - first:
+      213: -7887183776597284541
+    second: Button_Back_HL
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -256,7 +259,7 @@ TextureImporter:
         width: 212
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,7 +280,7 @@ TextureImporter:
         width: 445
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,7 +301,7 @@ TextureImporter:
         width: 212
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -311,7 +314,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_Back_HL
+      name: Button_Play_HL
       rect:
         serializedVersion: 2
         x: 331
@@ -319,7 +322,7 @@ TextureImporter:
         width: 212
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,7 +343,7 @@ TextureImporter:
         width: 445
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,7 +364,7 @@ TextureImporter:
         width: 212
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,7 +385,7 @@ TextureImporter:
         width: 154
         height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,7 +406,7 @@ TextureImporter:
         width: 47
         height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,6 +414,27 @@ TextureImporter:
       bones: []
       spriteID: 0d1e9eb08b05ef2d0800000000000000
       internalID: -3243065930256096816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Back_HL
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 599
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349e1bda4281b8290800000000000000
+      internalID: -7887183776597284541
       vertices: []
       indices: 
       edges: []
