@@ -186,19 +186,27 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "MousePosition",
-                    "type": "Value",
-                    "id": "a224a956-5077-483d-9d08-37d11cf83816",
-                    "expectedControlType": "Vector2",
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "c540532a-d9f6-4c9a-83cc-68b73ffdef88",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "fbc4d8da-8011-4347-9ee0-2e36edfc5b88",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "883205bc-1f5e-4377-ab85-435995f24535",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -230,12 +238,67 @@
                 },
                 {
                     "name": "",
-                    "id": "04c833b6-b48b-43ec-b9ac-690a406c44c2",
-                    "path": "<Mouse>/position",
+                    "id": "39674bb8-32ec-4140-9761-2bba2b6d32e5",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePosition",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "48484e66-14c5-4e00-9eb6-bc7dff0cdc64",
+                    "path": "<DualShockGamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9fb50e9a-e92a-496b-815e-9407a537119f",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8d4db41-44f3-493b-a7cd-1379c76d4d55",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e44b0e9-f6c1-4247-a849-6c93c38d086d",
+                    "path": "<DualShockGamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7eede11-9a99-4f5d-be84-f14cb5dbbae8",
+                    "path": "<XInputController>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

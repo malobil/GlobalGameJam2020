@@ -707,6 +707,10 @@ MonoBehaviour:
   cameraIngame: {fileID: 0}
   cameraTranstionSpeed: 3
   cameraTranstionRotationSpeed: 5
+  buttons:
+  - {fileID: 1850591260}
+  - {fileID: 1605891124176549063}
+  - {fileID: 4761853929918079075}
   player: {fileID: 0}
   UIManager: {fileID: 0}
   gameManager: {fileID: 0}

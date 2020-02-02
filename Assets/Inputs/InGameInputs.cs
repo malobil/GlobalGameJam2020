@@ -199,19 +199,27 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
-                    ""name"": ""MousePosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""a224a956-5077-483d-9d08-37d11cf83816"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""c540532a-d9f6-4c9a-83cc-68b73ffdef88"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbc4d8da-8011-4347-9ee0-2e36edfc5b88"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""883205bc-1f5e-4377-ab85-435995f24535"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -243,12 +251,67 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""04c833b6-b48b-43ec-b9ac-690a406c44c2"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""39674bb8-32ec-4140-9761-2bba2b6d32e5"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MousePosition"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48484e66-14c5-4e00-9eb6-bc7dff0cdc64"",
+                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fb50e9a-e92a-496b-815e-9407a537119f"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8d4db41-44f3-493b-a7cd-1379c76d4d55"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e44b0e9-f6c1-4247-a849-6c93c38d086d"",
+                    ""path"": ""<DualShockGamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7eede11-9a99-4f5d-be84-f14cb5dbbae8"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -266,7 +329,8 @@ public class @InGameInputs : IInputActionCollection, IDisposable
         // InMenu
         m_InMenu = asset.FindActionMap("InMenu", throwIfNotFound: true);
         m_InMenu_Submit = m_InMenu.FindAction("Submit", throwIfNotFound: true);
-        m_InMenu_MousePosition = m_InMenu.FindAction("MousePosition", throwIfNotFound: true);
+        m_InMenu_Down = m_InMenu.FindAction("Down", throwIfNotFound: true);
+        m_InMenu_Up = m_InMenu.FindAction("Up", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -374,13 +438,15 @@ public class @InGameInputs : IInputActionCollection, IDisposable
     private readonly InputActionMap m_InMenu;
     private IInMenuActions m_InMenuActionsCallbackInterface;
     private readonly InputAction m_InMenu_Submit;
-    private readonly InputAction m_InMenu_MousePosition;
+    private readonly InputAction m_InMenu_Down;
+    private readonly InputAction m_InMenu_Up;
     public struct InMenuActions
     {
         private @InGameInputs m_Wrapper;
         public InMenuActions(@InGameInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Submit => m_Wrapper.m_InMenu_Submit;
-        public InputAction @MousePosition => m_Wrapper.m_InMenu_MousePosition;
+        public InputAction @Down => m_Wrapper.m_InMenu_Down;
+        public InputAction @Up => m_Wrapper.m_InMenu_Up;
         public InputActionMap Get() { return m_Wrapper.m_InMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -393,9 +459,12 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                 @Submit.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
                 @Submit.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
                 @Submit.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
-                @MousePosition.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
-                @MousePosition.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
-                @MousePosition.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
+                @Down.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnDown;
+                @Up.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnUp;
             }
             m_Wrapper.m_InMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -403,9 +472,12 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                 @Submit.started += instance.OnSubmit;
                 @Submit.performed += instance.OnSubmit;
                 @Submit.canceled += instance.OnSubmit;
-                @MousePosition.started += instance.OnMousePosition;
-                @MousePosition.performed += instance.OnMousePosition;
-                @MousePosition.canceled += instance.OnMousePosition;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
             }
         }
     }
@@ -420,6 +492,7 @@ public class @InGameInputs : IInputActionCollection, IDisposable
     public interface IInMenuActions
     {
         void OnSubmit(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
     }
 }

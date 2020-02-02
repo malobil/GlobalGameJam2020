@@ -13,6 +13,9 @@ public class Script_Menu : MonoBehaviour
     public float cameraTranstionSpeed = 1.3f;
     public float cameraTranstionRotationSpeed = 1f;
 
+    public List<Script_Button> buttons;
+    private int currentButtonSelected = 0;
+
     private InGameInputs inputs;
     private Vector2 mousePosition;
     private Script_Button lastButtonSelected;
@@ -37,15 +40,22 @@ public class Script_Menu : MonoBehaviour
         inputs = new InGameInputs();
         
         inputs.InMenu.Submit.performed += ctx => PressButton();
-        inputs.InMenu.MousePosition.performed += ctx => GetMousePos(inputs.InMenu.MousePosition.ReadValue<Vector2>());
+        inputs.InMenu.Up.performed += ctx => UpButton();
+        inputs.InMenu.Down.performed += ctx => DownButton();
         inputs.Enable();
+    }
+
+    private void Start()
+    {
+        SelectButton();
     }
 
     private void OnDisable()
     {
-        inputs.InMenu.MousePosition.performed -= ctx => GetMousePos(inputs.InMenu.MousePosition.ReadValue<Vector2>());
         inputs.InMenu.Submit.performed -= ctx => PressButton();
-      
+        inputs.InMenu.Up.performed -= ctx => UpButton();
+        inputs.InMenu.Down.performed -= ctx => DownButton();
+        inputs.Disable();
     }
 
     private void Update()
@@ -102,33 +112,33 @@ public class Script_Menu : MonoBehaviour
         gameIsRunning = false;
     }
 
-    private void GetMousePos(Vector2 mousePos)
+    private void UpButton()
     {
-        mousePosition = mousePos;
-
-        Ray cameraRay = Camera.main.ScreenPointToRay(mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(cameraRay, out hit))
+        if (currentButtonSelected > 0)
         {
-            if (hit.collider.GetComponent<Script_Button>())
-            {
-                if (lastButtonSelected != hit.collider.GetComponent<Script_Button>())
-                {
-                    hit.collider.GetComponent<Script_Button>().UnLight();
-                }
-                
-                hit.collider.GetComponent<Script_Button>().Highlight();
-                lastButtonSelected = hit.collider.GetComponent<Script_Button>();
-            }
+            currentButtonSelected--;
+            SelectButton();
         }
-        else
+    }
+
+    private void DownButton()
+    {
+        if (currentButtonSelected < buttons.Count-1)
         {
-            if(lastButtonSelected != null)
-            {
-                lastButtonSelected.UnLight();
-            }
+            currentButtonSelected++;
+            SelectButton();
         }
+    }
+
+    void SelectButton()
+    {
+        if (lastButtonSelected != null)
+        {
+            lastButtonSelected.UnLight();
+        }
+
+        lastButtonSelected = buttons[currentButtonSelected];
+        lastButtonSelected.Highlight();
     }
 
     private void PressButton()
