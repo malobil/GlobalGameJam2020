@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Script_Menu : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Script_Menu : MonoBehaviour
     public GameObject UIManager;
     public GameObject gameManager;
     private bool gameIsRunning = false;
+    private bool gameIsOver = false;
 
     private void Awake()
     {
@@ -48,24 +50,56 @@ public class Script_Menu : MonoBehaviour
 
     private void Update()
     {
-        if(Camera.main.transform.position == inGameCamera.transform.position && !gameIsRunning)
+        if(Camera.main.transform.position == inGameCamera.transform.position && !gameIsRunning && !gameIsOver)
         {
             StartGame(); 
         }
+
+        if (Camera.main.transform.position == menuCamera.transform.position && gameIsOver)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
-    public void StartTransition()
+    public void MenuGameTransition()
     {
         inGameCamera.SetActive(true);
         menuCamera.gameObject.SetActive(false);
     }
 
+    public void GameMenuTransition()
+    {
+        inGameCamera.SetActive(false);
+        menuCamera.gameObject.SetActive(true);
+    }
+
     void StartGame()
     {
+        gameIsOver = false;
         gameManager.SetActive(true);
         UIManager.SetActive(true);
         player.enabled = true;
         gameIsRunning = true;
+        Script_MusicManager.Instance.PlayGameMusic();
+    }
+
+    public void EndGame()
+    {
+        gameIsOver = true;
+        Script_MusicManager.Instance.StopMusic();
+        StartCoroutine(WaitTransition());
+    }
+
+    public IEnumerator WaitTransition()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        GameMenuTransition();
+        gameManager.SetActive(false);
+        UIManager.SetActive(false);
+        player.enabled = false;
+        gameIsRunning = false;
+        Time.timeScale = 1;
+
     }
 
     private void GetMousePos(Vector2 mousePos)

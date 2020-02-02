@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3098361662626090148
 Transform:
   m_ObjectHideFlags: 0
@@ -75,4 +75,6 @@ MonoBehaviour:
   - {fileID: -6012383036058890656, guid: e4de52faee284e74480bcf1de6873761, type: 3}
   - {fileID: -6814883429959451469, guid: e4de52faee284e74480bcf1de6873761, type: 3}
   pnjObject: {fileID: 6546260396251421146, guid: 4a8492d25394cab4c995922eaa015db3,
+    type: 3}
+  soucoupePrefab: {fileID: 6586909814966747240, guid: b711a3d317aac5d43b36e2181ded928e,
     type: 3}

@@ -32,7 +32,7 @@ public class Script_Button : MonoBehaviour
         switch(bType)
         {
             case ButtonType.Play:
-                Script_Menu.Instance.StartTransition();
+                Script_Menu.Instance.MenuGameTransition();
                 break;
             case ButtonType.ShowHide:
                 ShowUI();

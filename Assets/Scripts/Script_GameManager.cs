@@ -243,9 +243,9 @@ public class Script_GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Script_UIManager.Instance.ShowGameOver();
-        StopAllCoroutines();
         Time.timeScale = 0;
+        Script_UIManager.Instance.ShowGameOver();
+        Script_Menu.Instance.EndGame();
     }
 
     public float GetPercentDistance(Vector3 actualPos)
