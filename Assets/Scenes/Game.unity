@@ -673,12 +673,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c64cbda5b514deb43a6984ca33349671,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.84
+      value: -2.975
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c64cbda5b514deb43a6984ca33349671,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.973
+      value: 2.47
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c64cbda5b514deb43a6984ca33349671,
         type: 3}
@@ -3738,7 +3738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &603529620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9037,8 +9037,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695282859}
-  m_LocalRotation: {x: 0.031190576, y: -0.70641756, z: 0.031190664, w: 0.7064196}
-  m_LocalPosition: {x: -1.984, y: 1.76, z: -0.762}
+  m_LocalRotation: {x: 0.016926652, y: 0.9825158, z: -0.11334251, w: 0.14672971}
+  m_LocalPosition: {x: -0.937, y: 2.023, z: -0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10206,6 +10206,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1950114879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1951383517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c64cbda5b514deb43a6984ca33349671,
+    type: 3}
+  m_PrefabInstance: {fileID: 114520656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1951383521
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951383517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b2427a5c3b98534c96a31c83f6d41cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1951418692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6519649088677023624, guid: 51a9d9e19178b814aa2d46d55f401d42,

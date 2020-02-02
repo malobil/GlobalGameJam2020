@@ -38,6 +38,8 @@ public class Script_GameManager : MonoBehaviour
     public List<Sprite> pnjsSprite;
     public GameObject pnjObject;
 
+    public GameObject soucoupePrefab; 
+
 
     private void Awake()
     {
@@ -60,6 +62,7 @@ public class Script_GameManager : MonoBehaviour
         SpawnARandomBurger();
         StartCoroutine(WaitSpawn());
         StartCoroutine(WaitPNJSpawn());
+        StartCoroutine(WaitSoucoupeSpawn());
     }
 
     private void Update()
@@ -189,6 +192,20 @@ public class Script_GameManager : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(1f,4f));
         SpawnAPnj();
         StartCoroutine(WaitPNJSpawn());
+    }
+
+    IEnumerator WaitSoucoupeSpawn()
+    {
+        yield return new WaitForSeconds(Random.Range(3f, 10f));
+        SpawnSoucoupe();
+        StartCoroutine(WaitSoucoupeSpawn());
+    }
+
+    void SpawnSoucoupe()
+    {
+        int rdmAnimation = Random.Range(0, 4);
+        GameObject newPnj = Instantiate(soucoupePrefab);
+        newPnj.GetComponent<Animator>().SetInteger("Anim", rdmAnimation);
     }
 
     void SpawnAPnj()
