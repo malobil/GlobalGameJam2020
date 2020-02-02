@@ -18,6 +18,7 @@ public class Script_Button : MonoBehaviour
                 Debug.Log("Tuto");
                 break;
             case ButtonType.Quit:
+                Application.Quit();
                 Debug.Log("Quit");
                 break;
         }

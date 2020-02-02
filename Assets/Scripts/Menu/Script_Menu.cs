@@ -22,6 +22,7 @@ public class Script_Menu : MonoBehaviour
     private void OnDisable()
     {
         inputs.InMenu.MousePosition.performed -= ctx => GetMousePos(inputs.InMenu.MousePosition.ReadValue<Vector2>());
+        inputs.InMenu.Submit.performed -= ctx => PressButton();
         inputs.Disable();
     }
 
