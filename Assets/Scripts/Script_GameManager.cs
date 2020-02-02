@@ -38,6 +38,7 @@ public class Script_GameManager : MonoBehaviour
     public List<Sprite> pnjsSprite;
     public GameObject pnjObject;
 
+
     private void Awake()
     {
         if(Instance == null)
