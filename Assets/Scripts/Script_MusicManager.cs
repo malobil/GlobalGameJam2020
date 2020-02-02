@@ -34,7 +34,7 @@ public class Script_MusicManager : MonoBehaviour
 
     public void PlayGameMusic()
     {
-        audioComp.pitch = 1.1f;
+        audioComp.pitch = 1.05f;
         audioComp.clip = gameMusic;
         audioComp.Play();
     }

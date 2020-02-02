@@ -7,7 +7,7 @@ public class Script_Burger : MonoBehaviour
 {
     public BurgerType type;
     public int scoreValue = 15 ;
-    public GameObject associateInputUI;
+    public SpriteRenderer inputIndication;
 
     private Rigidbody rb;
 
@@ -17,25 +17,18 @@ public class Script_Burger : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-       Script_UIManager.Instance.UpdateInputIndicationPosition(associateInputUI,Script_GameManager.Instance.GetPercentDistance(transform.position));
-    }
-
     public void Move(Vector3 _direction,float _moveSpeed)
     {
         rb.velocity = _direction * _moveSpeed;
     }
 
-    public void SetAssociateInputUI(GameObject newAssociateInputUI)
+    public void SetupInputIndication(Sprite inputSpr)
     {
-        associateInputUI = newAssociateInputUI;
-        Script_UIManager.Instance.UpdateInputIndicationPosition(associateInputUI, Script_GameManager.Instance.GetPercentDistance(transform.position));
+        inputIndication.sprite = inputSpr;
     }
 
     public void DestroyMe()
     {
-        Destroy(associateInputUI);
         Destroy(gameObject);
     }
 }

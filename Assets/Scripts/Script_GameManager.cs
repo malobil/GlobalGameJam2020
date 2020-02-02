@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Script_GameManager : MonoBehaviour
 {
@@ -38,8 +39,9 @@ public class Script_GameManager : MonoBehaviour
     public List<Sprite> pnjsSprite;
     public GameObject pnjObject;
 
-    public GameObject soucoupePrefab; 
+    public GameObject soucoupePrefab;
 
+    public List<InputsUI> inputUIList;
 
     private void Awake()
     {
@@ -104,29 +106,51 @@ public class Script_GameManager : MonoBehaviour
 
     public void SpawnSpecificBurger(BurgerType burgerToSpawn, Vector3 spawnPosition)
     {
+        int inputsUIIdx = 0;
+
+        if (Gamepad.current != null)
+        {
+            if (Gamepad.current.displayName == "Xbox Controller")
+            {
+                inputsUIIdx = 1;
+
+            }
+            else if (Gamepad.current.displayName == "Wireless Controller")
+            {
+                inputsUIIdx = 2;
+            }
+        }
+
         GameObject newBurger = null;
+        Sprite inputSpr = null;
+
         switch(burgerToSpawn)
         {
             case BurgerType.good:
                 newBurger = Instantiate(burgerGood, spawnPosition, Quaternion.identity);
+                inputSpr = inputUIList[inputsUIIdx].nothingInputSpr;
                 break;
             case BurgerType.divide:
                 newBurger = Instantiate(burgerDivide, spawnPosition, Quaternion.identity);
+                inputSpr = inputUIList[inputsUIIdx].tongsInputSpr;
                 break;
             case BurgerType.small:
                 newBurger = Instantiate(burgerSmall, spawnPosition, Quaternion.identity);
+                inputSpr = inputUIList[inputsUIIdx].suckerInputSpr;
                 break;
             case BurgerType.hight:
                 newBurger = Instantiate(burgerHight, spawnPosition, Quaternion.identity);
+                inputSpr = inputUIList[inputsUIIdx].spatuleInputSpr;
                 break;
             case BurgerType.longer:
                 newBurger = Instantiate(burgerLong, spawnPosition, Quaternion.identity);
+                inputSpr = inputUIList[inputsUIIdx].knifeInputSpr;
                 break;
         }
 
         AddBurgerToList(newBurger);
         newBurger.GetComponent<Script_Burger>().Move(Vector3.left, currentSpeed);
-        newBurger.GetComponent<Script_Burger>().associateInputUI = Script_UIManager.Instance.SpawnInputIndication(burgerToSpawn);
+        newBurger.GetComponent<Script_Burger>().SetupInputIndication(inputSpr);
     }
 
     public void AddBurgerToList(GameObject burgerToAdd)
@@ -265,4 +289,15 @@ public class Script_GameManager : MonoBehaviour
             (Vector3.Distance(burgerSpawnPoint.position, actualPos) / Vector3.Distance(burgerSpawnPoint.position, burgerEndPoint.position))*100f;
         return distanceFromStart;
     }
+}
+
+[System.Serializable]
+public class InputsUI
+{
+    public string controllerName;
+    public Sprite spatuleInputSpr;
+    public Sprite tongsInputSpr;
+    public Sprite knifeInputSpr;
+    public Sprite suckerInputSpr;
+    public Sprite nothingInputSpr;
 }

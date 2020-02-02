@@ -78,3 +78,37 @@ MonoBehaviour:
     type: 3}
   soucoupePrefab: {fileID: 6586909814966747240, guid: b711a3d317aac5d43b36e2181ded928e,
     type: 3}
+  inputUIList:
+  - controllerName: Keyboard
+    spatuleInputSpr: {fileID: -4397129911206595011, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    tongsInputSpr: {fileID: -2536684746343878895, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    knifeInputSpr: {fileID: -682870216569393785, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    suckerInputSpr: {fileID: -4705523147275019333, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    nothingInputSpr: {fileID: 7020222394514236587, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+  - controllerName: XBOX
+    spatuleInputSpr: {fileID: 1099085308389305806, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    tongsInputSpr: {fileID: 7876141300913652239, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    knifeInputSpr: {fileID: -1659634156921940585, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    suckerInputSpr: {fileID: 1456801388537646484, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    nothingInputSpr: {fileID: -8385270376756989214, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+  - controllerName: PS4
+    spatuleInputSpr: {fileID: 6531635663590735199, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    tongsInputSpr: {fileID: -913065710004332170, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    knifeInputSpr: {fileID: -3304156750744693488, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    suckerInputSpr: {fileID: 8837637043154861690, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}
+    nothingInputSpr: {fileID: 3007898637598947188, guid: c5a3491159b557d46a5c81b27f0e9fe7,
+      type: 3}

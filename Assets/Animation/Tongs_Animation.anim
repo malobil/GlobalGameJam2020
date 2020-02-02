@@ -697,7 +697,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 3
     messageOptions: 0
-  - time: 0.43333334
+  - time: 0.35
     functionName: AllowToolUse
     data: 
     objectReferenceParameter: {fileID: 0}
