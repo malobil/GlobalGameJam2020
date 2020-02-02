@@ -185,13 +185,8 @@ public class Script_GameManager : MonoBehaviour
 
     IEnumerator WaitPNJSpawn()
     {
-        yield return new WaitForSeconds(Random.Range(2f,5f));
-
-        if(Random.Range(0,2) == 0)
-        {
-            SpawnAPnj();
-        }
-     
+        yield return new WaitForSeconds(Random.Range(1f,4f));
+        SpawnAPnj();
         StartCoroutine(WaitPNJSpawn());
     }
 
