@@ -185,6 +185,74 @@ public class @InGameInputs : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""InMenu"",
+            ""id"": ""75b1c435-0784-45c5-874e-fc1327abe29b"",
+            ""actions"": [
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""9793b146-2346-479d-b6d5-cbfc9bfe9162"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""a224a956-5077-483d-9d08-37d11cf83816"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""883205bc-1f5e-4377-ab85-435995f24535"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da394753-9b17-4b69-8ad6-b49b398e2c48"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e012ab26-331b-4b6c-b227-d8fc1f538a1e"",
+                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04c833b6-b48b-43ec-b9ac-690a406c44c2"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -195,6 +263,10 @@ public class @InGameInputs : IInputActionCollection, IDisposable
         m_InGame_Knife = m_InGame.FindAction("Knife", throwIfNotFound: true);
         m_InGame_Tongs = m_InGame.FindAction("Tongs", throwIfNotFound: true);
         m_InGame_Sucker = m_InGame.FindAction("Sucker", throwIfNotFound: true);
+        // InMenu
+        m_InMenu = asset.FindActionMap("InMenu", throwIfNotFound: true);
+        m_InMenu_Submit = m_InMenu.FindAction("Submit", throwIfNotFound: true);
+        m_InMenu_MousePosition = m_InMenu.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -297,11 +369,57 @@ public class @InGameInputs : IInputActionCollection, IDisposable
         }
     }
     public InGameActions @InGame => new InGameActions(this);
+
+    // InMenu
+    private readonly InputActionMap m_InMenu;
+    private IInMenuActions m_InMenuActionsCallbackInterface;
+    private readonly InputAction m_InMenu_Submit;
+    private readonly InputAction m_InMenu_MousePosition;
+    public struct InMenuActions
+    {
+        private @InGameInputs m_Wrapper;
+        public InMenuActions(@InGameInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Submit => m_Wrapper.m_InMenu_Submit;
+        public InputAction @MousePosition => m_Wrapper.m_InMenu_MousePosition;
+        public InputActionMap Get() { return m_Wrapper.m_InMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IInMenuActions instance)
+        {
+            if (m_Wrapper.m_InMenuActionsCallbackInterface != null)
+            {
+                @Submit.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnSubmit;
+                @MousePosition.started -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_InMenuActionsCallbackInterface.OnMousePosition;
+            }
+            m_Wrapper.m_InMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+            }
+        }
+    }
+    public InMenuActions @InMenu => new InMenuActions(this);
     public interface IInGameActions
     {
         void OnSpatule(InputAction.CallbackContext context);
         void OnKnife(InputAction.CallbackContext context);
         void OnTongs(InputAction.CallbackContext context);
         void OnSucker(InputAction.CallbackContext context);
+    }
+    public interface IInMenuActions
+    {
+        void OnSubmit(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
     }
 }

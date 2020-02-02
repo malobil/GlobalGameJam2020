@@ -57,10 +57,18 @@ MonoBehaviour:
   burgerSpawnPoint: {fileID: 0}
   burgerEndPoint: {fileID: 0}
   currentSpeed: 1
-  speedMult: 1.2
-  spawnMult: 0.7
-  burgerToSpawnToSpeedUp: 1
-  timeToSpawnABurger: {x: 2, y: 4}
+  speedMult: 1.1
+  spawnMult: 0.72
+  burgerToSpeedUpMult: 2
+  burgerToSpawnToSpeedUp: 5
+  timeToSpawnABurger: {x: 1.5, y: 3}
   life: 5
   currentScore: 0
   tapisRenderer: {fileID: 0}
+  pnjsSprite:
+  - {fileID: -6805123043047442297, guid: 9c368dae84e508d49933187d9812aa14, type: 3}
+  - {fileID: 1884616395731501793, guid: 9c368dae84e508d49933187d9812aa14, type: 3}
+  - {fileID: -7055389900128792458, guid: 9c368dae84e508d49933187d9812aa14, type: 3}
+  - {fileID: -1434742867921834447, guid: 9c368dae84e508d49933187d9812aa14, type: 3}
+  pnjObject: {fileID: 6546260396251421146, guid: 4a8492d25394cab4c995922eaa015db3,
+    type: 3}

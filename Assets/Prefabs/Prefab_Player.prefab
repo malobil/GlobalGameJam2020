@@ -132,7 +132,7 @@ MonoBehaviour:
   spatule: {fileID: 6472459010892358274}
   knife: {fileID: 6651772274677225570}
   sucker: {fileID: 7056605476117175581}
-  tongs: {fileID: 0}
+  tongs: {fileID: 5461034258010028209}
 --- !u!95 &170768519783111589
 Animator:
   serializedVersion: 3
@@ -448,17 +448,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b287c0a7c3978f2449ee736730a7d5a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000710551
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b287c0a7c3978f2449ee736730a7d5a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.52
+      value: -1.437
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b287c0a7c3978f2449ee736730a7d5a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000000710551
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b287c0a7c3978f2449ee736730a7d5a2,
         type: 3}
@@ -505,8 +505,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Battant
       objectReference: {fileID: 0}
+    - target: {fileID: 1058301526628568413, guid: b287c0a7c3978f2449ee736730a7d5a2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058301526628568413, guid: b287c0a7c3978f2449ee736730a7d5a2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058301526628568413, guid: b287c0a7c3978f2449ee736730a7d5a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b287c0a7c3978f2449ee736730a7d5a2, type: 3}
+--- !u!1 &5461034258010028209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: b287c0a7c3978f2449ee736730a7d5a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4100686542566220216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9048334603080420002 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b287c0a7c3978f2449ee736730a7d5a2,

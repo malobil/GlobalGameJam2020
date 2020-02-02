@@ -172,6 +172,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "InMenu",
+            "id": "75b1c435-0784-45c5-874e-fc1327abe29b",
+            "actions": [
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "9793b146-2346-479d-b6d5-cbfc9bfe9162",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "a224a956-5077-483d-9d08-37d11cf83816",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "883205bc-1f5e-4377-ab85-435995f24535",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da394753-9b17-4b69-8ad6-b49b398e2c48",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e012ab26-331b-4b6c-b227-d8fc1f538a1e",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04c833b6-b48b-43ec-b9ac-690a406c44c2",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
